@@ -20,9 +20,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  post '/signup', to: 'users#create'
+  #post '/signup', to: 'users#create'
+
+
 
   resources :users
-
+  resources :account_activations, only: [:edit]
 
 end

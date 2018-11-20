@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UsersLoginTest < ActionDispatch::IntegrationTest
 
-
+=begin
 def setup
     @user = users(:michael)
   end
@@ -25,7 +25,7 @@ def setup
     log_in_as(@user, remember_me: '0')
     assert_empty cookies['remember_token']
   end
-=begin
+
     assert is_logged_in?
     assert_redirected_to @user
     follow_redirect!
