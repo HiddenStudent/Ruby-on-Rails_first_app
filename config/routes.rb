@@ -27,8 +27,13 @@ Rails.application.routes.draw do
   get '/remind', to: 'remind#new'
   post '/remind', to: 'remind#create'
 
+  get 'newpass', to: 'newpass#show'
+  post 'newpass', to: 'newpass#create'
+  patch 'newpass', to: 'newpass#create'
 
+  #resources :newpass,     only: [:show, :create, :edit, :update]
   resources :users
   resources :account_activations, only: [:edit]
+
   #get '/account_activators', to 'account_activators#edit'
 end
