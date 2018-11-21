@@ -34,6 +34,6 @@ Rails.application.routes.draw do
   #resources :newpass,     only: [:show, :create, :edit, :update]
   resources :users
   resources :account_activations, only: [:edit]
-
+  resources :microposts,          only: [:create, :destroy]
   #get '/account_activators', to 'account_activators#edit'
 end
