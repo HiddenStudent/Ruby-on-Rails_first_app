@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'remind/new'
+
   get 'sessions/new'
 
   get 'users/new'
@@ -22,6 +24,8 @@ Rails.application.routes.draw do
 
   post '/signup', to: 'users#create'
 
+  get '/remind', to: 'remind#new'
+  post '/remind', to: 'remind#create'
 
 
   resources :users
