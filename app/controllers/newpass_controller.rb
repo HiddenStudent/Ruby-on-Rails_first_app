@@ -29,6 +29,7 @@ class NewpassController < ApplicationController
   user = User.find_by_email(params[:email])
   user.password = (params[:newpass][:password])
   if user.save
+    log_in user
     flash[:info] = "Welcome! Ur password has been changed"
     redirect_to user
 
