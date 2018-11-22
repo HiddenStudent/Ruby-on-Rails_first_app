@@ -5,6 +5,14 @@ source 'https://rubygems.org'
 gem 'rubocop', '~> 0.60.0', require: false
 
 
+
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
+
+
+
+
+
 gem 'rails',        '5.1.6'
 gem 'bcrypt', '3.1.12'
 gem 'faker', '1.7.3'
@@ -41,6 +49,7 @@ end
 
 group :production do
   gem 'pg', '0.18.4'
+  gem 'fog', '1.42'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

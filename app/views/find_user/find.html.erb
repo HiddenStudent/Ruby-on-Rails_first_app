@@ -1,0 +1,14 @@
+<%unless @user.nil? %>
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+      <span><%= link_to "view my profile", @user %></span>
+    </section>
+  </aside>
+  </div>
+<%end%>

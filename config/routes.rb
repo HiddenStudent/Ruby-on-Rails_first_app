@@ -35,6 +35,13 @@ Rails.application.routes.draw do
   post 'newpass', to: 'newpass#create'
   patch 'newpass', to: 'newpass#create'
 
+
+  get 'find_user', to: 'find_user#find'
+  post 'find_user', to: 'find_user#find'
+
+
+
+
   resources :users do
     member do
       get :following, :followers
