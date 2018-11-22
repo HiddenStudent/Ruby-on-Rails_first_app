@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
-
+$checker = false
 
   # Pages following ND FOLLOWERS
 
@@ -78,8 +78,14 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"
+   # if ($checker == true)
+
     redirect_to users_url
-  end
+ #   else
+
+     # redirect_to followers_user_path(@user.find(session[:user_id]))
+  #  end
+    end
 
 
 
