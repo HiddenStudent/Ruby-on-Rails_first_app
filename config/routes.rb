@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
   get 'remind/new'
 
   get 'sessions/new'
@@ -31,9 +35,16 @@ Rails.application.routes.draw do
   post 'newpass', to: 'newpass#create'
   patch 'newpass', to: 'newpass#create'
 
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
   #resources :newpass,     only: [:show, :create, :edit, :update]
   resources :users
   resources :account_activations, only: [:edit]
   resources :microposts,          only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   #get '/account_activators', to 'account_activators#edit'
 end
